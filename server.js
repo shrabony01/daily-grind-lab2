@@ -2,8 +2,15 @@ import express from 'express';
 
 const app=express();
 const port=3000;
-app.get("/",(req,res)=>{
-    res.send("Welcome to The Daily Grind Coffee Shop API!");
+//root router
+app.get("/api/fun-fact",async(req,res)=>{
+    // res.send("Welcome to The Daily Grind Coffee Shop API!");
+
+    try{
+
+    }catch(e){
+        res.status(500).json({error:"The fact was not fun"});
+    }
 });
 
 app.listen(port,()=>{
