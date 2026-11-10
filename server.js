@@ -12,6 +12,8 @@ app.get("/api/fun-fact",async(req,res)=>{
         );
         const json=await response.json();
 
+        res.status(200).json({ fact:json.text });
+        
     }catch(e){
         res.status(500).json({error:"The fact was not fun"});
     }
