@@ -2,10 +2,14 @@ import express from 'express';
 
 const app=express();
 const port=3000;
-//root router
-app.get("/api/fun-fact",async(req,res)=>{
-    // res.send("Welcome to The Daily Grind Coffee Shop API!");
 
+//root route
+app.get('/',(req,res)=>{
+    res.send("Welcome to The Daily Grind Coffee Shop API!");
+});
+
+//api route
+app.get("/api/fun-fact",async(req,res)=>{
     try{
         const response = await fetch(
           "https://uselessfacts.jsph.pl/api/v2/facts/random"
